@@ -1,11 +1,10 @@
 import React from 'react';
-import styles from './InputField.module.css';
 
 function InputField({ name, value, onChange, placeholder, isError }) {
-    const inputClassName = isError ? styles.error : '';
+    const inputClassName = isError ? 'error' : '';
 
     return (
-        <div className={styles.inputField}>
+        <div>
             <input
                 type="text"
                 name={name}
@@ -13,6 +12,7 @@ function InputField({ name, value, onChange, placeholder, isError }) {
                 onChange={onChange}
                 placeholder={placeholder}
                 className={inputClassName}
+                style={{ borderColor: isError ? 'red' : '' }}
             />
         </div>
     );
